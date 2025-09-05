@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Expense Tracker 💰</h1>
+    <div class="main">
+      <div class="left">
+        <section class="balance-section">
+          <h2>Your Balance</h2>
+          <h3 id="balance">₹0.00</h3>
+        </section>
+
+        <section class="summary-section">
+          <div class="summary-card income">
+            <i class="fa-solid fa-circle-arrow-down"></i>
+            <h4>Income</h4>
+            <p id="money-plus">₹0.00</p>
+          </div>
+          <div class="summary-card expense">
+            <i class="fa-solid fa-circle-arrow-up"></i>
+            <h4>Expense</h4>
+            <p id="money-minus">₹0.00</p>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h3>Add New Transaction</h3>
+          <form id="form">
+            <div class="form-control">
+              <label for="text">Title</label>
+              <input type="text" id="text" placeholder="Enter title..." required />
+            </div>
+            <div class="form-control">
+              <label for="amount">Amount (₹)</label>
+              <input type="number" id="amount" placeholder="Enter amount..." required />
+            </div>
+            <div class="form-control">
+              <label for="type">Transaction Type</label>
+              <select id="type" required>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="category">Category</label>
+              <select id="category">
+                <option value="">-- Select Category --</option>
+                <option value="food">Food</option>
+                <option value="rent">Rent</option>
+                <option value="travel">Travel</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="date">Date</label>
+              <input type="date" id="date" />
+            </div>
+            <div id="form-btn">
+              <button class="btn" type="submit">Add Transaction</button>
+              <!-- <button class="btn" type="button" id="update-btn">Update Transaction</button> -->
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="right">
+        <section class="history-section">
+          <div class="history-header">
+            <h3>Transaction History</h3>
+            <button class="btn1" id="clearBtn">Clear History</button>
+          </div>
+          <ul id="list" class="transaction-list">
+            <li class="expense">
+              <span class="text">Groceries</span>
+              <span class="amount">- ₹1200</span>
+              <span class="date">2025-07-04</span>
+              <button class="delete-btn">x</button>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
